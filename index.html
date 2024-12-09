@@ -1,21 +1,39 @@
 <!DOCTYPE html>
-<html>
+<html lang="zh-CN">
 <head>
-    <title>我的简单网页</title>
-    <link rel="stylesheet" type="text/css" href="css/styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>音频文件对比</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <h1>欢迎来到我的简单网页</h1>
-    <p>这是一个段落，您可以在这里放置一些文本。</p>
-
-    <!-- 图片 -->
-    <img src="assets/images/example.jpg" alt="示例图片">
-
-    <!-- 音频 -->
-    <audio controls>
-        <source src="assets/audio/sound.wav" type="audio/wav">
-        您的浏览器不支持 audio 标签。
-    </audio>
-
+    <header>
+        <h1>音频文件对比</h1>
+    </header>
+    <main>
+        <section class="audio-comparison">
+            <article>
+                <h2>样本 1</h2>
+                <div class="audio-pair">
+                    <p><strong>原始音频：</strong></p>
+                    <audio controls>
+                        <source src="assets/audio/original/sample1.wav" type="audio/wav">
+                        您的浏览器不支持 audio 标签。
+                    </audio>
+                </div>
+                <div class="audio-pair">
+                    <p><strong>生成音频：</strong></p>
+                    <audio controls>
+                        <source src="assets/audio/generated/sample1_gen.wav" type="audio/wav">
+                        您的浏览器不支持 audio 标签。
+                    </audio>
+                </div>
+            </article>
+            <!-- 更多样本可以复制上面的 <article> 结构 -->
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 音频比较项目</p>
+    </footer>
 </body>
 </html>
