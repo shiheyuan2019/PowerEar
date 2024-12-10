@@ -40,7 +40,8 @@ article {
 }
 
 .audio-pair {
-    margin-bottom: 15px;
+    display: flex;
+    gap: 20px; /* 给两个音频播放器之间添加一些间距 */
 }
 
 audio {
@@ -58,7 +59,7 @@ footer {
 }
 
 @media (max-width: 768px) {
-    article {
-        width: 100%;
+    .audio-pair-container {
+        flex-direction: column; /* 在小屏幕上堆叠显示 */
     }
 }
