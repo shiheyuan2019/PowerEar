@@ -47,7 +47,7 @@ article {
 
 /* 可选：为了更好地适应不同屏幕大小 */
 @media (max-width: 768px) {
-    .audio-pair-container {
+    .audio-pair {
         grid-template-columns: 1fr; /* 在小屏幕上变为单列 */
     }
 }
