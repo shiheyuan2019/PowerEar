@@ -40,8 +40,16 @@ article {
 }
 
 .audio-pair {
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 创建两列等宽的网格 */
     gap: 20px; /* 给两个音频播放器之间添加一些间距 */
+}
+
+/* 可选：为了更好地适应不同屏幕大小 */
+@media (max-width: 768px) {
+    .audio-pair-container {
+        grid-template-columns: 1fr; /* 在小屏幕上变为单列 */
+    }
 }
 
 audio {
@@ -56,10 +64,4 @@ footer {
     position: fixed;
     bottom: 0;
     width: 100%;
-}
-
-@media (max-width: 768px) {
-    .audio-pair-container {
-        flex-direction: column; /* 在小屏幕上堆叠显示 */
-    }
 }
