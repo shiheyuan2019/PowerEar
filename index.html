@@ -1,93 +1,212 @@
-<!DOCTYPE html>
+
+ <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>音频文件对比</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>PowerEar</title>
+    <link rel="stylesheet" href="./css/styles.css">
 </head>
-<body>
+<body >
     <header>
-        <h1>compare with different device model</h1>
+        <h1>PowerEar</h1>
     </header>
-    <main>
-        <section class="audio-comparison">
-            <p><strong>English Females</strong></p>
-            <article>
-                <h2>iPhone 11</h2>
-                <div class="audio-pair">
-                    <p><strong>原始音频vs生成音频</strong></p>
-                    <audio controls>
-                        <source src="asset/audio/mergewav/iPhone11/real.wav" type="audio/wav">
-                        您的浏览器不支持 audio 标签。
-                    </audio>
-                    <audio controls>
-                        <source src="asset/audio/mergewav/iPhone11/fake.wav" type="audio/wav">
-                        您的浏览器不支持 audio 标签。
-                    </audio>
-                </div>
-            </article>
-            <article>
-                <h2>iPhone 12</h2>
-                <div class="audio-pair">
-                    <p><strong>原始音频vs生成音频</strong></p>
-                    <audio controls>
-                        <source src="asset/audio/mergewav/iPhone12/real.wav" type="audio/wav">
-                        您的浏览器不支持 audio 标签。
-                    </audio>
-                    <audio controls>
-                        <source src="asset/audio/mergewav/iPhone12/fake.wav" type="audio/wav">
-                        您的浏览器不支持 audio 标签。
-                    </audio>
-                </div>
-            </article>
-            <article>
-                <h2>iPhone 14</h2>
-                <div class="audio-pair">
-                    <p><strong>原始音频vs生成音频</strong></p>
-                    <audio controls>
-                        <source src="asset/audio/mergewav/iPhone14/real.wav" type="audio/wav">
-                        您的浏览器不支持 audio 标签。
-                    </audio>
-                    <audio controls>
-                        <source src="asset/audio/mergewav/iPhone14/fake.wav" type="audio/wav">
-                        您的浏览器不支持 audio 标签。
-                    </audio>
-                </div>
-            </article>
-            <article>
-                <h2>one</h2>
-                <div class="audio-pair">
-                    <p><strong>原始音频vs生成音频</strong></p>
-                    <audio controls>
-                        <source src="asset/audio/mergewav/one/real.wav" type="audio/wav">
-                        您的浏览器不支持 audio 标签。
-                    </audio>
-                    <audio controls>
-                        <source src="asset/audio/mergewav/one/fake.wav" type="audio/wav">
-                        您的浏览器不支持 audio 标签。
-                    </audio>
-                </div>
-            </article>
-            <article>
-                <h2>sony</h2>
-                <div class="audio-pair">
-                    <p><strong>原始音频vs生成音频</strong></p>
-                    <audio controls>
-                        <source src="asset/audio/mergewav/sony/real.wav" type="audio/wav">
-                        您的浏览器不支持 audio 标签。
-                    </audio>
-                    <audio controls>
-                        <source src="asset/audio/mergewav/sony/fake.wav" type="audio/wav">
-                        您的浏览器不支持 audio 标签。
-                    </audio>
-                </div>
-            </article>
-            <!-- 更多样本可以复制上面的 <article> 结构 -->
+    <section>
+        <h1>
+            1 PowerEar explanation
+        </h1>
+        <article>
+            <h2>PowerEar is an acoustic eavesdropping attack that leverages the power side channel to reconstruct any audio reproduced by the built-in speaker of a mobile device, with a non-constrained vocabulary. 
+            Our approach relies on a combination of signal processing and generative artificial intelligence techniques to learn the mapping between power consumption and audio playback, enabling the reconstruction of such audio through spectrogram enhancement.
+            </h2>    
+            <h2>Typically, the fundamental frequencies of the human voice range from 300Hz to 3.4kHz.
+            The English language has a total of 48 phonemes that can be bisected into 20 vowels and 28 consonants. 
+            As we can observe in the figures, vowels have their main frequency components below 2kHz (see Figure a) while labial and fricative consonants can reach frequencies up to 8kHz (see Figure c). 
+            </h2>
+            <h2>
+            The built-in speaker of a mobile device causes current fluctuations that are related to the audio played.
+            Therefore, we measure the resulting power traces, for which we report the spectrograms of the vowels in Figure b and the consonants in Figure d.
+            </h2>
+            <table><tr>
+            <td>
+                <img src="asset/images/audio_spectrogram_vowels.png"   alt="Audio of vowels" class="device-image">
+                <p class="media-description" >(a) Audio of vowels</p>
+            
+                <img src="asset/images/power_data_spectrogram_vowels.png"  alt="Audio of vowels" class="device-image">
+                <p class="media-description" >(b) Power trace of vowels</p>
+            </td>
+            <td>
+                <img src="asset/images/audio_spectrogram_consonants.png" alt="Audio of vowels" class="device-image">
+                <p class="media-description" >(c) Audio of consonants</p>
+        
+                <img src="asset/images/power_data_spectrogram_consonants.png"  alt="Audio of vowels" class="device-image">
+                <p class="media-description" >(d) Power trace of consonants</p>
+            </td>
+            </tr></table>
         </section>
-    </main>
+    <section class="audio-comparison">
+        <h1>
+            2 Here is the compare result of Original and Reconstructing audio with different device
+        </h1>
+            <article>
+                <h3>iPhone 11</h3>
+                <p><strong>Original Audio vs Reconstructing Audio </strong></p>
+                <div class="audio-pair">
+                    
+                    <audio controls>
+                        <source src="asset/audio/mergewav/iPhone11EF1/real.wav" type="audio/wav">
+                        您的浏览器不支持 audio 标签。
+                    </audio>
+                    <audio controls>
+                        <source src="asset/audio/mergewav/iPhone11EF1/fake.wav" type="audio/wav">
+                        您的浏览器不支持 audio 标签。
+                    </audio>
+                </div>
+            </article>
+            <article>
+                <h3>iPhone 12</h3>
+                <p><strong>Original Audio vs Reconstructing Audio </strong></p>
+                <div class="audio-pair">
+                    <audio controls>
+                        <source src="asset/audio/mergewav/iPhone12EF1/real.wav" type="audio/wav">
+                        您的浏览器不支持 audio 标签。
+                    </audio>
+                    <audio controls>
+                        <source src="asset/audio/mergewav/iPhone12EF1/fake.wav" type="audio/wav">
+                        您的浏览器不支持 audio 标签。
+                    </audio>
+                    
+                </div>
+                    
+                </div>
+            </article>
+            <article>
+                <h3>iPhone 14</h3>
+                <p><strong>Original Audio vs Reconstructing Audio </strong></p>
+                <div class="audio-pair">
+                    <audio controls>
+                        <source src="asset/audio/mergewav/iPhone14EF1/real.wav" type="audio/wav">
+                        您的浏览器不支持 audio 标签。
+                    </audio>
+                    <audio controls>
+                        <source src="asset/audio/mergewav/iPhone14EF1/fake.wav" type="audio/wav">
+                        您的浏览器不支持 audio 标签。
+                    </audio>
+                </div>
+            </article>
+            <article>
+                <h3>one</h3>
+                <p><strong>Original Audio vs Reconstructing Audio </strong></p>
+                <div class="audio-pair">
+                    
+                    <audio controls>
+                        <source src="asset/audio/mergewav/oneEF1/real.wav" type="audio/wav">
+                        您的浏览器不支持 audio 标签。
+                    </audio>
+                    <audio controls>
+                        <source src="asset/audio/mergewav/oneEF1/fake.wav" type="audio/wav">
+                        您的浏览器不支持 audio 标签。
+                    </audio>
+                </div>
+            </article>
+            <article>
+                <h3>sony</h3>
+                <p><strong>Original Audio vs Reconstructing Audio </strong></p>
+                <div class="audio-pair">
+                    
+                    <audio controls>
+                        <source src="asset/audio/mergewav/sonyEF1/real.wav" type="audio/wav">
+                        您的浏览器不支持 audio 标签。
+                    </audio>
+                    <audio controls>
+                        <source src="asset/audio/mergewav/sonyEF1/fake.wav" type="audio/wav">
+                        您的浏览器不支持 audio 标签。
+                    </audio>
+                </div>
+            </article>
+
+            <h1>
+                3 Here is the compare result of Original and Reconstructing audio with different language
+            </h1>
+            <article>
+                <h3>Chinese</h3>
+                <p><strong>Original Audio vs Reconstructing Audio with Chinese</strong></p>
+                <div class="audio-pair">
+                    
+                    <audio controls>
+                        <source src="asset/audio/powerEar_demo/Chinese_audio1_original.wav" type="audio/wav">
+                        您的浏览器不支持 audio 标签。
+                    </audio>
+                    <audio controls>
+                        <source src="asset/audio/powerEar_demo/Chinese_audio1_reconstructed.wav" type="audio/wav">
+                        您的浏览器不支持 audio 标签。
+                    </audio>
+                </div>
+            </article>
+            <article>
+                <h3>English</h3>
+                <p><strong>Original Audio vs Reconstructing Audio with English</strong></p>
+                <div class="audio-pair">
+                    
+                    <audio controls>
+                        <source src="asset/audio/powerEar_demo/English_audio1_original.wav" type="audio/wav">
+                        您的浏览器不支持 audio 标签。
+                    </audio>
+                    <audio controls>
+                        <source src="asset/audio/powerEar_demo/English_audio1_reconstructed.wav" type="audio/wav">
+                        您的浏览器不支持 audio 标签。
+                    </audio>
+                </div>
+            </article>
+            <article>
+                <h3>Italian</h3>
+                <p><strong>Original Audio vs Reconstructing Audio with Italian</strong></p>
+                <div class="audio-pair">
+                    
+                    <audio controls>
+                        <source src="asset/audio/powerEar_demo/Italian_audio1_original.wav" type="audio/wav">
+                        您的浏览器不支持 audio 标签。
+                    </audio>
+                    <audio controls>
+                        <source src="asset/audio/powerEar_demo/Italian_audio1_reconstructed.wav" type="audio/wav">
+                        您的浏览器不支持 audio 标签。
+                    </audio>
+                </div>
+            </article>
+            <article>
+                <h3>French</h3>
+                <p><strong>Original Audio vs Reconstructing Audio with French</strong></p>
+                <div class="audio-pair">
+                    
+                    <audio controls>
+                        <source src="asset/audio/powerEar_demo/French_audio1_original.wav" type="audio/wav">
+                        您的浏览器不支持 audio 标签。
+                    </audio>
+                    <audio controls>
+                        <source src="asset/audio/powerEar_demo/French_audio1_reconstructed.wav" type="audio/wav">
+                        您的浏览器不支持 audio 标签。
+                    </audio>
+                </div>
+            </article>
+            <article>
+                <h3>Spanish</h3>
+                <p><strong>Original Audio vs Reconstructing Audio with Spanish</strong></p>
+                <div class="audio-pair">
+                    
+                    <audio controls>
+                        <source src="asset/audio/powerEar_demo/Spanish_audio1_original.wav" type="audio/wav">
+                        您的浏览器不支持 audio 标签。
+                    </audio>
+                    <audio controls>
+                        <source src="asset/audio/powerEar_demo/Spanish_audio1_reconstructed.wav" type="audio/wav">
+                        您的浏览器不支持 audio 标签。
+                    </audio>
+                </div>
+            </article>
+    </section>
+
     <footer>
-        <p>&copy; 2024 音频比较项目</p>
+        <p>&copy; PowerEar 2024 audio results</p>
     </footer>
 </body>
-</html>
+</html> 

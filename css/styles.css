@@ -1,9 +1,15 @@
+
+
 body {
     font-family: Arial, sans-serif;
     line-height: 1.6;
     margin: 0;
     padding: 0;
-    background-color: #f4f4f4;
+    background: url("back.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed; /* 背景图固定 */
 }
 
 header {
@@ -20,40 +26,60 @@ header h1 {
     padding: 1rem;
 }
 
-main {
-    padding: 20px;
-}
 
+.flex-item {
+    flex: 0 0 25%; 
+    padding: 15px;
+    box-sizing: border-box; 
+    background-color: #f4f4f4;
+    margin-bottom: 20px;
+}
+.device-image {
+    width:100%;
+    max-width: 500px;
+    margin-right: 20px;
+    border-radius: 8px;
+}
+.media-description {
+    flex: 1;
+}
 .audio-comparison {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
 }
-
+.PowerEar-explanation {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+.flex-container {
+    display: flex;
+    flex-wrap: wrap; 
+}
 article {
     background: #fff;
     padding: 20px;
     margin: 10px;
-    width: calc(30% - 20px);
+    width: calc(100% - 20px);
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     border-radius: 8px;
 }
 
 .audio-pair {
     display: grid;
-    grid-template-columns: repeat(2, 1fr); /* 创建两列等宽的网格 */
-    gap: 20px; /* 给两个音频播放器之间添加一些间距 */
+    grid-template-columns: repeat(2, 1fr); 
+    gap: 20px; 
 }
 
-/* 可选：为了更好地适应不同屏幕大小 */
 @media (max-width: 768px) {
     .audio-pair {
-        grid-template-columns: 1fr; /* 在小屏幕上变为单列 */
+        grid-template-columns: 1fr; 
     }
 }
 
 audio {
-    width: 40%;
+    width: 100%;
 }
 
 footer {
@@ -64,4 +90,4 @@ footer {
     position: fixed;
     bottom: 0;
     width: 100%;
-}
+} 
