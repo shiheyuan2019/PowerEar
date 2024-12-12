@@ -81,7 +81,9 @@ article {
 audio {
     width: 100%;
 }
-
+main {
+    margin-bottom: 50px;
+}
 footer {
     text-align: center;
     padding: 10px;
