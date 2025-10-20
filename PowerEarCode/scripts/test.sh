@@ -1,0 +1,1 @@
+python test.py --dataroot ./testdata/oppo --name oppoTotal_data_bicycle_gan --checkpoints_dir checkpoints --results_dir results/oppo --model bicycle_gan --direction BtoA
